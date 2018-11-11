@@ -5,6 +5,7 @@ import (
 	"image"
 	"os"
 
+	"github.com/LAKuEN/gocv-util"
 	"gocv.io/x/gocv"
 )
 
@@ -30,7 +31,7 @@ func main() {
 	}
 	mozaicTarget := orig.Region(mozaicRect)
 
-	if err := Mozaic(&mozaicTarget, blockSize); err != nil {
+	if err := gocvutil.Mozaic(&mozaicTarget, blockSize); err != nil {
 		fmt.Fprintf(os.Stderr, "%v", err.Error())
 	}
 
